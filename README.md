@@ -176,17 +176,6 @@ npm run dev
 - RESTful API conventions
 - Indexed database queries
 
-## Deployment
-
-### Backend (Heroku/Railway/Render)
-\`\`\`bash
-git push heroku main
-\`\`\`
-
-### Frontend (Vercel)
-\`\`\`bash
-vercel deploy
-\`\`\`
 
 ## Interview Notes
 
