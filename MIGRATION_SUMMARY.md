@@ -43,7 +43,7 @@
 ### `/server.js` - Lines ~260-290
 
 **Before (OpenAI):**
-```javascript
+\`\`\`javascript
 const response = await fetch("https://api.openai.com/v1/chat/completions", {
   method: "POST",
   headers: {
@@ -56,10 +56,10 @@ const response = await fetch("https://api.openai.com/v1/chat/completions", {
     max_tokens: 150,
   }),
 })
-```
+\`\`\`
 
 **After (Groq):**
-```javascript
+\`\`\`javascript
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 const response = await fetch(GROQ_API_URL, {
@@ -80,19 +80,19 @@ if (!response.ok) {
   const errorData = await response.json()
   throw new Error(`Groq API error: ${errorData.error?.message || "Unknown error"}`)
 }
-```
+\`\`\`
 
 ### `.env.example` - Updated
 
 **Before:**
-```env
+\`\`\`env
 OPENAI_API_KEY=sk-your-openai-api-key-here
-```
+\`\`\`
 
 **After:**
-```env
+\`\`\`env
 GROQ_API_KEY=gsk_your-groq-api-key-here
-```
+\`\`\`
 
 ### `README.md` - Updated
 - Changed AI Integration from "OpenAI API" to "Groq API"
@@ -124,7 +124,7 @@ All frontend code works unchanged!
 ## Testing the Migration
 
 ### Local Test
-```bash
+\`\`\`bash
 # 1. Get Groq API key from console.groq.com
 # 2. Update .env.local:
 GROQ_API_KEY=gsk_your_key
@@ -139,15 +139,15 @@ curl -X POST http://localhost:5000/api/ai/insights \
   -d '{"month": 1, "year": 2024}'
 
 # 5. Should return insights from Groq Mixtral
-```
+\`\`\`
 
 ### Production Test
-```bash
+\`\`\`bash
 # 1. Add GROQ_API_KEY to Vercel env vars
 # 2. Redeploy project
 # 3. Create account and add transactions
 # 4. Check Dashboard for insights
-```
+\`\`\`
 
 ## Files Modified
 

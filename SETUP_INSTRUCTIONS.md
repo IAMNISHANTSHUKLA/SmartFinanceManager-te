@@ -12,7 +12,7 @@ This is a **full-stack SaaS application** with:
 
 You'll need accounts on 3 free services:
 
-```
+\`\`\`
 ┌─────────────────────────────────────────────────┐
 │           VERCEL (Frontend)                      │
 │  ✅ Free tier - perfect for starting            │
@@ -35,7 +35,7 @@ You'll need accounts on 3 free services:
 │           GROQ (AI - Mixtral 8x7B)              │
 │  ✅ Free tier - 30 requests/day                 │
 └─────────────────────────────────────────────────┘
-```
+\`\`\`
 
 ## 📋 Prerequisites
 
@@ -49,17 +49,17 @@ Before starting, you should have:
 ### Phase 1: Prepare Your Code (5 minutes)
 
 1. **Fork or Clone Repository**
-```bash
+\`\`\`bash
 # Clone the repository
 git clone <your-repo-url>
 cd smart-finance-manager
 
 # Install dependencies
 npm install
-```
+\`\`\`
 
 2. **Create Local Environment File**
-```bash
+\`\`\`bash
 # Copy example to local
 cp .env.example .env.local
 
@@ -67,10 +67,10 @@ cp .env.example .env.local
 # DATABASE_URL=postgresql://localhost/finance_db
 # GROQ_API_KEY=gsk_placeholder_for_now
 # JWT_SECRET=dev-secret-123
-```
+\`\`\`
 
 3. **Test Locally (Optional)**
-```bash
+\`\`\`bash
 # Terminal 1 - Start backend
 npm run server:dev
 
@@ -78,7 +78,7 @@ npm run server:dev
 npm run dev
 
 # Visit http://localhost:3000
-```
+\`\`\`
 
 ### Phase 2: Create Free Accounts (10 minutes)
 
@@ -124,22 +124,22 @@ npm run dev
    - Go to **Settings** → **Environment Variables**
 
 2. **Add These Variables**
-   ```
+   \`\`\`
    DATABASE_URL = <your-neon-connection-string>
    GROQ_API_KEY = <your-groq-api-key>
    JWT_SECRET = <generate-random-string>
    NODE_ENV = production
    NEXT_PUBLIC_API_URL = https://smart-finance-XXXX.vercel.app
-   ```
+   \`\`\`
 
    **How to generate JWT_SECRET:**
-   ```bash
+   \`\`\`bash
    # On Mac/Linux:
    openssl rand -base64 32
 
    # On Windows:
    # Use an online generator: https://generate-random.org/base64-generator
-   ```
+   \`\`\`
 
 3. **Save Variables**
    - Click "Save"
@@ -158,7 +158,7 @@ npm run dev
 
 After deployment, test these features:
 
-```
+\`\`\`
 □ Can open application at Vercel URL
 □ Can create new account (Register page works)
 □ Can login with created account
@@ -167,44 +167,44 @@ After deployment, test these features:
 □ AI Insights card shows spending insights
 □ Can view transaction list
 □ Can view category summary
-```
+\`\`\`
 
 If any checkbox fails, see **Troubleshooting** below.
 
 ## 🔧 Troubleshooting
 
 ### "Database connection failed"
-```
+\`\`\`
 Problem: API can't connect to Neon
 Solution:
   1. Copy Neon URL exactly from dashboard
   2. Verify it starts with: postgresql://
   3. Verify no extra spaces in DATABASE_URL
   4. Try: psql <your-connection-string>
-```
+\`\`\`
 
 ### "AI Insights not working"
-```
+\`\`\`
 Problem: Insights card shows error
 Solution:
   1. Check GROQ_API_KEY in Vercel variables
   2. Verify key starts with: gsk_
   3. Check Groq console quota (30 req/day free)
   4. Click "Redeploy" in Vercel
-```
+\`\`\`
 
 ### "Can't reach API from frontend"
-```
+\`\`\`
 Problem: Loading spinner forever on Dashboard
 Solution:
   1. Check NEXT_PUBLIC_API_URL includes https://
   2. Should be: https://your-project.vercel.app
   3. NO trailing slash
   4. Check browser console for CORS errors
-```
+\`\`\`
 
 ### "Vercel build failed"
-```
+\`\`\`
 Problem: Red error during deployment
 Solution:
   1. Click "Deployments" in Vercel
@@ -213,17 +213,17 @@ Solution:
   4. Look for specific error message
   5. Common: missing env var or syntax error
   6. Fix and push to main branch
-```
+\`\`\`
 
 ### "Getting rate limited on Groq"
-```
+\`\`\`
 Problem: "Rate limit exceeded" error after some requests
 Solution:
   1. Free tier: 30 requests/day
   2. If exceeded, wait 24 hours
   3. Or upgrade at console.groq.com
   4. Most users won't hit limit with typical usage
-```
+\`\`\`
 
 ## 📊 What Should Work
 
@@ -262,14 +262,14 @@ Want to understand the code better?
 
 ## 💰 Cost Analysis
 
-```
+\`\`\`
 Vercel (Frontend)      → FREE
 Neon (Database)        → FREE (up to 3GB)
 Groq (AI)              → FREE (up to 30 requests/day)
 GitHub (Code hosting)  → FREE
 
 Total cost: $0 per month ✨
-```
+\`\`\`
 
 Even with high usage:
 - 100+ AI requests/day: ~$1-5/month

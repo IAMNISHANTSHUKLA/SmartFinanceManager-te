@@ -13,7 +13,7 @@ A production-ready full-stack SaaS application for freelancers and small busines
 
 ## Architecture
 
-```
+\`\`\`
 Frontend (React/Next.js on Vercel)
     ↓
 REST APIs (Express)
@@ -23,7 +23,7 @@ Backend Logic
 Database (PostgreSQL on Neon)
     ↓
 AI Service (Groq - Mixtral 8x7B)
-```
+\`\`\`
 
 ## Features
 
@@ -39,7 +39,7 @@ AI Service (Groq - Mixtral 8x7B)
 ## Quick Start
 
 ### Local Development
-```bash
+\`\`\`bash
 # Install dependencies
 npm install
 
@@ -48,7 +48,7 @@ npm run server:dev
 
 # Start frontend (Terminal 2)
 npm run dev
-```
+\`\`\`
 
 See [LOCAL_DEVELOPMENT.md](./LOCAL_DEVELOPMENT.md) for detailed setup.
 
@@ -89,31 +89,31 @@ See [LOCAL_DEVELOPMENT.md](./LOCAL_DEVELOPMENT.md) for detailed setup.
 ### Setup
 
 1. **Clone and Install Dependencies**
-```bash
+\`\`\`bash
 npm install
-```
+\`\`\`
 
 2. **Configure Environment Variables**
 Create a `.env` file in the root:
-```
+\`\`\`
 DATABASE_URL=postgresql://user:password@localhost:5432/finance_db
 JWT_SECRET=your-secret-key
 GROQ_API_KEY=your-groq-api-key
 NODE_ENV=development
 PORT=5000
-```
+\`\`\`
 
 3. **Start Backend Server**
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 4. **Frontend Setup (in a separate terminal)**
-```bash
+\`\`\`bash
 cd frontend
 npm install
 npm run dev
-```
+\`\`\`
 
 5. **Access Application**
 - Frontend: http://localhost:3000
@@ -179,14 +179,14 @@ npm run dev
 ## Deployment
 
 ### Backend (Heroku/Railway/Render)
-```bash
+\`\`\`bash
 git push heroku main
-```
+\`\`\`
 
 ### Frontend (Vercel)
-```bash
+\`\`\`bash
 vercel deploy
-```
+\`\`\`
 
 ## Interview Notes
 

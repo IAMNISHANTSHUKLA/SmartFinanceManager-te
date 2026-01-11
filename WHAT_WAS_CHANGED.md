@@ -26,7 +26,7 @@ The Smart Finance Manager was updated to:
 **Changed**: Updated environment variable template
 
 **Specific changes**:
-```env
+\`\`\`env
 # Removed:
 OPENAI_API_KEY=sk-your-openai-api-key-here
 
@@ -35,7 +35,7 @@ GROQ_API_KEY=gsk_your-groq-api-key-here
 
 # Updated:
 NEXT_PUBLIC_API_URL=https://your-vercel-deployment-url.vercel.app
-```
+\`\`\`
 
 **Why**: Documentation needs to match new setup
 
@@ -169,7 +169,7 @@ These files work perfectly as-is:
 
 ## 📊 Change Statistics
 
-```
+\`\`\`
 Files Modified:      4
   - server.js
   - .env.example
@@ -192,7 +192,7 @@ Files Unchanged:    20+ (all frontend, all components)
 
 Total Changes:      ~600 lines of documentation added
 Code Changes:       ~15 lines in server.js
-```
+\`\`\`
 
 ## 🎯 Why These Changes?
 
@@ -228,21 +228,21 @@ Code Changes:       ~15 lines in server.js
 ## 🧪 Testing the Changes
 
 ### Frontend Testing
-```bash
+\`\`\`bash
 npm run dev
 # Visit http://localhost:3000
 # Should work exactly as before
-```
+\`\`\`
 
 ### Backend Testing
-```bash
+\`\`\`bash
 npm run server:dev
 # Visit http://localhost:5000/api/ai/insights (with valid JWT)
 # Should receive insights from Groq Mixtral
-```
+\`\`\`
 
 ### Integration Testing
-```bash
+\`\`\`bash
 # 1. Start backend
 npm run server:dev
 
@@ -253,7 +253,7 @@ npm run dev
 # 4. Add transactions
 # 5. Check dashboard for AI insights
 # Should all work!
-```
+\`\`\`
 
 ## 🚀 Deployment Impact
 

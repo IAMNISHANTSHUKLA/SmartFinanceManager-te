@@ -5,7 +5,7 @@ This document explains the migration from OpenAI API to Groq API and open-source
 ## What Changed?
 
 ### Before (OpenAI)
-```javascript
+\`\`\`javascript
 const response = await fetch("https://api.openai.com/v1/chat/completions", {
   headers: {
     Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
@@ -15,10 +15,10 @@ const response = await fetch("https://api.openai.com/v1/chat/completions", {
     messages: [{ role: "user", content: prompt }],
   }),
 })
-```
+\`\`\`
 
 ### After (Groq)
-```javascript
+\`\`\`javascript
 const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
   headers: {
     Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
@@ -28,7 +28,7 @@ const response = await fetch("https://api.groq.com/openai/v1/chat/completions", 
     messages: [{ role: "user", content: prompt }],
   }),
 })
-```
+\`\`\`
 
 ## Why Groq?
 
@@ -56,14 +56,14 @@ No new packages needed! The code still uses native `fetch` API.
 ### 2. Environment Variables
 
 **Remove:**
-```env
+\`\`\`env
 OPENAI_API_KEY=sk_your_openai_key
-```
+\`\`\`
 
 **Add:**
-```env
+\`\`\`env
 GROQ_API_KEY=gsk_your_groq_key
-```
+\`\`\`
 
 ### 3. Backend Server Code
 - Changed API endpoint from OpenAI to Groq
@@ -86,7 +86,7 @@ GROQ_API_KEY=gsk_your_groq_key
 
 If you want to switch models, edit `/server.js` line with `model:`:
 
-```javascript
+\`\`\`javascript
 // Use Llama 2 (70B parameters)
 model: "llama2-70b-4096"
 
@@ -95,7 +95,7 @@ model: "mixtral-8x7b-32768"
 
 // Use Llama 2 (chat optimized)
 model: "llama2-70b-chat"
-```
+\`\`\`
 
 ## Migration Checklist
 
@@ -111,7 +111,7 @@ model: "llama2-70b-chat"
 ## Testing the Migration
 
 ### Local Testing
-```bash
+\`\`\`bash
 # 1. Get Groq API key from console.groq.com
 # 2. Add to .env.local:
 GROQ_API_KEY=gsk_your_key
@@ -124,7 +124,7 @@ npm run dev
 
 # 5. Create account and add transactions
 # 6. Check Dashboard → Insights for AI response
-```
+\`\`\`
 
 ### Production Testing
 1. Deploy to Vercel
@@ -135,33 +135,33 @@ npm run dev
 ## Troubleshooting Migration Issues
 
 ### "Invalid API Key" Error
-```
+\`\`\`
 ❌ Groq API returned 401
 ✅ Check key format starts with `gsk_`
 ✅ Verify no extra spaces or quotes
-```
+\`\`\`
 
 ### "Model not found" Error
-```
+\`\`\`
 ❌ Model `mixtral-8x7b-32768` doesn't exist
 ✅ Verify exact spelling in server.js
 ✅ Check Groq console for available models
-```
+\`\`\`
 
 ### "Rate limit exceeded" Error
-```
+\`\`\`
 ❌ Free tier allows 30 requests/day
 ✅ Wait 24 hours or upgrade Groq plan
 ✅ For production, budget 10¢-$1/day
-```
+\`\`\`
 
 ### Slow Responses
-```
+\`\`\`
 ❌ Groq slow for financial insights
 ✅ Actually Groq is fastest option
 ✅ Check network latency
 ✅ Consider caching responses
-```
+\`\`\`
 
 ## Performance Metrics
 
@@ -190,12 +190,12 @@ npm run dev
 If you need to switch back to OpenAI:
 
 1. Install openai package:
-```bash
+\`\`\`bash
 npm install openai
-```
+\`\`\`
 
 2. Update `/server.js`:
-```javascript
+\`\`\`javascript
 import OpenAI from "openai";
 
 const client = new OpenAI({
@@ -207,12 +207,12 @@ const response = await client.chat.completions.create({
   messages: [{ role: "user", content: prompt }],
   max_tokens: 150,
 });
-```
+\`\`\`
 
 3. Update environment variable:
-```env
+\`\`\`env
 OPENAI_API_KEY=sk_your_key
-```
+\`\`\`
 
 4. Redeploy
 

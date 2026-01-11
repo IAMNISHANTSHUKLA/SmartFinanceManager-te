@@ -2,7 +2,7 @@
 
 ## System Design
 
-```
+\`\`\`
 ┌─────────────────────────────────────────────────────────────┐
 │                    Client Browser                           │
 │                   (React/Next.js)                           │
@@ -27,13 +27,13 @@
     │ • Trans.      │            │ • Analysis       │
     │ • Categories  │            │ • Trends         │
     └───────────────┘            └──────────────────┘
-```
+\`\`\`
 
 ## Component Architecture
 
 ### Frontend (Next.js App Router)
 
-```
+\`\`\`
 app/
 ├── page.tsx                 # Landing page
 ├── layout.tsx              # Root layout with metadata
@@ -51,11 +51,11 @@ app/
 ├── summary/
 │   └── page.tsx           # Monthly summary & breakdown
 └── globals.css            # Global styles & theme tokens
-```
+\`\`\`
 
 ### Backend (Express.js)
 
-```
+\`\`\`
 server.js
 ├── Middleware
 │   ├── CORS
@@ -80,12 +80,12 @@ server.js
 └── Database
     ├── Connection Pool
     └── Schema Init
-```
+\`\`\`
 
 ## Data Flow
 
 ### 1. User Authentication Flow
-```
+\`\`\`
 User Input (Email/Password)
     ↓
 React Component (Login/Register)
@@ -101,10 +101,10 @@ JWT Token Generation
 localStorage Storage
     ↓
 Dashboard Navigation
-```
+\`\`\`
 
 ### 2. Transaction Flow
-```
+\`\`\`
 User Action (Add/View/Delete)
     ↓
 React Component
@@ -120,10 +120,10 @@ Response JSON
 Update Component State
     ↓
 UI Re-render
-```
+\`\`\`
 
 ### 3. AI Insights Flow
-```
+\`\`\`
 Dashboard Load
     ↓
 Fetch Transactions (current month)
@@ -137,12 +137,12 @@ Parse Response
 Update State
     ↓
 Display in Insights Card
-```
+\`\`\`
 
 ## Database Schema
 
 ### Users Table
-```sql
+\`\`\`sql
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
@@ -150,10 +150,10 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
+\`\`\`
 
 ### Categories Table
-```sql
+\`\`\`sql
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id),
@@ -161,10 +161,10 @@ CREATE TABLE categories (
   color VARCHAR(7),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
+\`\`\`
 
 ### Transactions Table
-```sql
+\`\`\`sql
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id),
@@ -175,7 +175,7 @@ CREATE TABLE transactions (
   date DATE NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
+\`\`\`
 
 ### Indexes
 - `idx_transactions_user_id` on transactions(user_id)
@@ -185,7 +185,7 @@ CREATE TABLE transactions (
 ## API Contract Examples
 
 ### Authentication
-```http
+\`\`\`http
 POST /api/auth/register
 Content-Type: application/json
 
@@ -204,10 +204,10 @@ Response: 201 Created
   },
   "token": "eyJhbGciOiJIUzI1NiIs..."
 }
-```
+\`\`\`
 
 ### Create Transaction
-```http
+\`\`\`http
 POST /api/transactions
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -231,10 +231,10 @@ Response: 201 Created
   "date": "2024-01-15",
   "created_at": "2024-01-15T10:30:00Z"
 }
-```
+\`\`\`
 
 ### Get AI Insights
-```http
+\`\`\`http
 POST /api/ai/insights
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -248,7 +248,7 @@ Response: 200 OK
 {
   "insights": "Your dining expenses increased by 23% compared to last month. Consider setting a budget limit. Your most expensive category this month was Transport at $450."
 }
-```
+\`\`\`
 
 ## Security Considerations
 

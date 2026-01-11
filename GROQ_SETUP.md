@@ -30,13 +30,13 @@ This application uses **Mixtral 8x7B 32K** model:
 - Fast inference (300+ tokens/second on Groq)
 
 ### API Endpoint
-```
+\`\`\`
 https://api.groq.com/openai/v1/chat/completions
-```
+\`\`\`
 
 ### Configuration Location
 The Groq API key is used in `/server.js`:
-```javascript
+\`\`\`javascript
 const response = await fetch(GROQ_API_URL, {
   method: "POST",
   headers: {
@@ -49,20 +49,20 @@ const response = await fetch(GROQ_API_URL, {
     max_tokens: 150,
   }),
 })
-```
+\`\`\`
 
 ## Environment Variable Setup
 
 ### Local Development (.env.local)
-```env
+\`\`\`env
 GROQ_API_KEY=gsk_your_actual_key_here
-```
+\`\`\`
 
 ### Vercel Deployment
 In Vercel Dashboard → Settings → Environment Variables:
-```
+\`\`\`
 GROQ_API_KEY=gsk_your_actual_key_here
-```
+\`\`\`
 
 ## Free Tier Limits
 
@@ -77,7 +77,7 @@ For production with high usage, consider upgrading to a paid plan.
 ## Testing the Integration
 
 ### Test Locally
-```bash
+\`\`\`bash
 # Start the backend server
 npm run server:dev
 
@@ -89,14 +89,14 @@ curl -X POST http://localhost:5000/api/ai/insights \
     "month": 1,
     "year": 2024
   }'
-```
+\`\`\`
 
 ### Expected Response
-```json
+\`\`\`json
 {
   "insights": "Based on your January spending, you spent $XXX on expenses with Food being the largest category at $XXX. Consider setting a monthly budget limit for dining expenses. Your income exceeded expenses by $XXX this month."
 }
-```
+\`\`\`
 
 ## Troubleshooting
 
@@ -130,9 +130,9 @@ You can switch to other Groq-supported models:
 | `llama2-70b-4096` | 4K tokens | Fast | Text generation |
 
 To change the model, edit `/server.js` line with:
-```javascript
+\`\`\`javascript
 model: "mixtral-8x7b-32768", // Change this value
-```
+\`\`\`
 
 ## Monitoring Usage
 

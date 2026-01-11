@@ -19,11 +19,11 @@ This guide walks you through deploying the Smart Finance Manager to Vercel with 
 ## Step 3: Prepare Your Repository
 
 1. Make sure all files are committed to your GitHub repository:
-   ```bash
+   \`\`\`bash
    git add .
    git commit -m "Ready for Vercel deployment"
    git push origin main
-   ```
+   \`\`\`
 
 2. Ensure your repository includes:
    - All source files
@@ -47,7 +47,7 @@ This guide walks you through deploying the Smart Finance Manager to Vercel with 
 
 ### Option B: Using Vercel CLI
 
-```bash
+\`\`\`bash
 # Install Vercel CLI globally
 npm i -g vercel
 
@@ -55,7 +55,7 @@ npm i -g vercel
 vercel
 
 # Follow the prompts to link your project
-```
+\`\`\`
 
 ## Step 5: Add Environment Variables in Vercel
 

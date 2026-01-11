@@ -12,23 +12,23 @@ This guide will help you set up and run the Smart Finance Manager application lo
 
 ### 1. Clone and Install Dependencies
 
-```bash
+\`\`\`bash
 npm install
-```
+\`\`\`
 
 ### 2. Database Setup
 
 Create a PostgreSQL database:
 
-```bash
+\`\`\`bash
 createdb finance_db
-```
+\`\`\`
 
 ### 3. Environment Configuration
 
 Create a `.env` file in the root directory:
 
-```env
+\`\`\`env
 # Database
 DATABASE_URL=postgresql://localhost/finance_db
 
@@ -44,23 +44,23 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 # Server
 NODE_ENV=development
 PORT=5000
-```
+\`\`\`
 
 ### 4. Start the Backend Server
 
 In one terminal:
 
-```bash
+\`\`\`bash
 npm run server:dev
-```
+\`\`\`
 
 The backend will start on `http://localhost:5000`
 
 ### 5. Start the Frontend (in a new terminal)
 
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 The frontend will start on `http://localhost:3000`
 
@@ -83,7 +83,7 @@ Open your browser and navigate to:
 ### Authentication
 
 **Register**
-```
+\`\`\`
 POST /api/auth/register
 Content-Type: application/json
 
@@ -92,10 +92,10 @@ Content-Type: application/json
   "email": "john@example.com",
   "password": "securepassword"
 }
-```
+\`\`\`
 
 **Login**
-```
+\`\`\`
 POST /api/auth/login
 Content-Type: application/json
 
@@ -103,18 +103,18 @@ Content-Type: application/json
   "email": "john@example.com",
   "password": "securepassword"
 }
-```
+\`\`\`
 
 ### Transactions
 
 **Get All Transactions**
-```
+\`\`\`
 GET /api/transactions
 Authorization: Bearer <token>
-```
+\`\`\`
 
 **Create Transaction**
-```
+\`\`\`
 POST /api/transactions
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -126,10 +126,10 @@ Content-Type: application/json
   "type": "expense",
   "date": "2024-01-15"
 }
-```
+\`\`\`
 
 **Update Transaction**
-```
+\`\`\`
 PUT /api/transactions/:id
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -141,40 +141,40 @@ Content-Type: application/json
   "type": "expense",
   "date": "2024-01-15"
 }
-```
+\`\`\`
 
 **Delete Transaction**
-```
+\`\`\`
 DELETE /api/transactions/:id
 Authorization: Bearer <token>
-```
+\`\`\`
 
 ### Summary
 
 **Monthly Summary**
-```
+\`\`\`
 GET /api/summary/monthly?month=1&year=2024
 Authorization: Bearer <token>
-```
+\`\`\`
 
 **Category Summary**
-```
+\`\`\`
 GET /api/summary/category?month=1&year=2024
 Authorization: Bearer <token>
-```
+\`\`\`
 
 ### Categories
 
 **Get Categories**
-```
+\`\`\`
 GET /api/categories
 Authorization: Bearer <token>
-```
+\`\`\`
 
 ### AI Insights
 
 **Generate Insights**
-```
+\`\`\`
 POST /api/ai/insights
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -183,7 +183,7 @@ Content-Type: application/json
   "month": 1,
   "year": 2024
 }
-```
+\`\`\`
 
 ## Troubleshooting
 
@@ -215,9 +215,9 @@ Content-Type: application/json
 
 ### Vercel (Frontend)
 
-```bash
+\`\`\`bash
 vercel deploy
-```
+\`\`\`
 
 ### Heroku/Railway/Render (Backend)
 
@@ -230,7 +230,7 @@ vercel deploy
 
 ### Code Structure
 
-```
+\`\`\`
 ├── app/                    # Next.js app
 │   ├── page.tsx           # Home page
 │   ├── login/             # Login page
@@ -244,13 +244,13 @@ vercel deploy
 ├── server.js              # Express backend
 ├── package.json
 └── README.md
-```
+\`\`\`
 
 ### Running Tests
 
-```bash
+\`\`\`bash
 npm run lint
-```
+\`\`\`
 
 ## Contributing
 

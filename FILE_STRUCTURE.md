@@ -2,7 +2,7 @@
 
 ## Overview
 
-```
+\`\`\`
 smart-finance-manager/
 ├── app/                           # Next.js app directory (frontend)
 ├── components/                    # React components
@@ -15,7 +15,7 @@ smart-finance-manager/
 ├── .env.example                  # Environment variables template
 ├── README.md                     # Main documentation
 └── docs/                         # Setup guides
-```
+\`\`\`
 
 ## Frontend Files
 
@@ -116,7 +116,7 @@ smart-finance-manager/
 4. **AI Integration**: Groq API for insights
 
 **Key sections**:
-```javascript
+\`\`\`javascript
 // Database initialization
 const initializeDatabase = async () => { ... }
 
@@ -143,7 +143,7 @@ app.post("/api/ai/insights")
 
 // Categories
 app.get("/api/categories")
-```
+\`\`\`
 
 **Database tables created**:
 - `users` - User accounts
@@ -167,14 +167,14 @@ app.get("/api/categories")
 - `recharts`: Charts library
 
 **Key scripts**:
-```json
+\`\`\`json
 {
   "dev": "next dev",           // Start frontend
   "server:dev": "nodemon server.js",  // Start backend with reload
   "build": "next build",        // Build for production
   "start": "next start"         // Start production server
 }
-```
+\`\`\`
 
 ### `tsconfig.json`
 **Purpose**: TypeScript configuration
@@ -185,14 +185,14 @@ app.get("/api/categories")
 **Not committed**: Real `.env` is in `.gitignore`
 
 **Variables needed**:
-```env
+\`\`\`env
 DATABASE_URL=          # Neon PostgreSQL connection
 GROQ_API_KEY=          # Groq API key for AI
 JWT_SECRET=            # Secret for JWT tokens
 NEXT_PUBLIC_API_URL=   # Frontend API endpoint
 NODE_ENV=              # development or production
 PORT=                  # Backend server port
-```
+\`\`\`
 
 ### `next.config.mjs`
 **Purpose**: Next.js configuration
@@ -270,42 +270,42 @@ This file - Guide to all files and their purposes
 ## API Response Format
 
 ### Success Response
-```json
+\`\`\`json
 {
   "id": 1,
   "email": "user@example.com",
   "name": "John Doe",
   "token": "jwt_token_here"
 }
-```
+\`\`\`
 
 ### Error Response
-```json
+\`\`\`json
 {
   "error": "Email already exists"
 }
-```
+\`\`\`
 
 ### AI Insights Response
-```json
+\`\`\`json
 {
   "insights": "Based on your spending, you're exceeding budget in dining by 20%. Consider meal planning or cooking at home..."
 }
-```
+\`\`\`
 
 ## Database Schema
 
 ### users table
-```
+\`\`\`
 id (PRIMARY KEY)
 email (UNIQUE)
 password_hash
 name
 created_at
-```
+\`\`\`
 
 ### transactions table
-```
+\`\`\`
 id (PRIMARY KEY)
 user_id (FOREIGN KEY → users)
 amount
@@ -314,16 +314,16 @@ description
 type (income/expense)
 date
 created_at
-```
+\`\`\`
 
 ### categories table
-```
+\`\`\`
 id (PRIMARY KEY)
 user_id (FOREIGN KEY → users)
 name
 color (hex code)
 created_at
-```
+\`\`\`
 
 ## Environment Variable Mapping
 
@@ -338,14 +338,14 @@ created_at
 
 ## File Size Reference
 
-```
+\`\`\`
 server.js               ~8 KB    Single Express server with all endpoints
 app/page.tsx            ~2 KB    Landing page
 app/dashboard/          ~5 KB    Dashboard pages
 components/            ~50 KB    UI components (from shadcn/ui)
 package.json            ~3 KB    Dependencies list
 README.md              ~5 KB    Documentation
-```
+\`\`\`
 
 ## Hot to Find Things
 
